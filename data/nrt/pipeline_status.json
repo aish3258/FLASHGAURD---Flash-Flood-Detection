@@ -1,0 +1,321 @@
+{
+  "pipeline_name": "NASA IMERG Near-Real-Time Ingestion",
+  "last_run_timestamp": "2026-10-16T16:04:58.153826+00:00",
+  "last_ingestion_attempt": "2026-10-16T16:04:58.153826+00:00",
+  "last_successful_fetch": "2026-10-16T16:04:58.153826+00:00",
+  "last_ingestion_result": "UP_TO_DATE_DUPLICATES_SKIPPED",
+  "last_ingestion_message": "All 11 NASA granule(s) were already downloaded, verified, and up-to-date; duplicates safely skipped.",
+  "newly_downloaded_count": 0,
+  "skipped_duplicate_count": 11,
+  "failed_download_count": 0,
+  "execution_mode": "MANUAL_TRIGGER",
+  "status": "SUCCESS",
+  "data_freshness": {
+    "status": "FRESH",
+    "detail": "Observation is 1 day(s) old (nominal daily satellite latency is ~4\u201314 hours)."
+  },
+  "error_message": null,
+  "latest_observation_date": "2026-10-15",
+  "ingested_files_count": 11,
+  "latest_granules": [
+    {
+      "status": "SKIPPED_DUPLICATE",
+      "granule_ur": "GPM_3IMERGDE.07:3B-DAY-E.MS.MRG.3IMERG.20261011-S000000-E235959.V07C.nc4",
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261011-S000000-E235959.V07C.nc4",
+      "filepath": "C:\\Users\\abind\\OneDrive\\Documents\\FlashGuard-AI\\data\\nrt\\raw\\imerg\\3B-DAY-E.MS.MRG.3IMERG.20261011-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-11",
+      "file_size_bytes": 30281327
+    },
+    {
+      "status": "SKIPPED_DUPLICATE",
+      "granule_ur": "GPM_3IMERGDE.07:3B-DAY-E.MS.MRG.3IMERG.20261012-S000000-E235959.V07C.nc4",
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261012-S000000-E235959.V07C.nc4",
+      "filepath": "C:\\Users\\abind\\OneDrive\\Documents\\FlashGuard-AI\\data\\nrt\\raw\\imerg\\3B-DAY-E.MS.MRG.3IMERG.20261012-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-12",
+      "file_size_bytes": 30336721
+    },
+    {
+      "status": "SKIPPED_DUPLICATE",
+      "granule_ur": "GPM_3IMERGDE.07:3B-DAY-E.MS.MRG.3IMERG.20261013-S000000-E235959.V07C.nc4",
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261013-S000000-E235959.V07C.nc4",
+      "filepath": "C:\\Users\\abind\\OneDrive\\Documents\\FlashGuard-AI\\data\\nrt\\raw\\imerg\\3B-DAY-E.MS.MRG.3IMERG.20261013-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-13",
+      "file_size_bytes": 29262756
+    },
+    {
+      "status": "SKIPPED_DUPLICATE",
+      "granule_ur": "GPM_3IMERGDE.07:3B-DAY-E.MS.MRG.3IMERG.20261014-S000000-E235959.V07C.nc4",
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261014-S000000-E235959.V07C.nc4",
+      "filepath": "C:\\Users\\abind\\OneDrive\\Documents\\FlashGuard-AI\\data\\nrt\\raw\\imerg\\3B-DAY-E.MS.MRG.3IMERG.20261014-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-14",
+      "file_size_bytes": 29741228
+    },
+    {
+      "status": "SKIPPED_DUPLICATE",
+      "granule_ur": "GPM_3IMERGDE.07:3B-DAY-E.MS.MRG.3IMERG.20261015-S000000-E235959.V07C.nc4",
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261015-S000000-E235959.V07C.nc4",
+      "filepath": "C:\\Users\\abind\\OneDrive\\Documents\\FlashGuard-AI\\data\\nrt\\raw\\imerg\\3B-DAY-E.MS.MRG.3IMERG.20261015-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-15",
+      "file_size_bytes": 30516081
+    }
+  ],
+  "source_availability": {
+    "imerg_nrt": {
+      "status": "ONLINE",
+      "product": "GPM_3IMERGDE",
+      "latest_observation": "2026-10-15",
+      "nominal_latency": "Approx. 4 hours"
+    },
+    "imd_rainfall": {
+      "status": "UNAVAILABLE_FOR_NRT",
+      "historical_end_date": "2023-12-31",
+      "notice": "Operational real-time IMD gridded feed is not connected. FlashGuard-AI strictly avoids fabricating missing IMD rainfall."
+    },
+    "smap_soil_moisture": {
+      "status": "UNAVAILABLE_FOR_NRT",
+      "historical_end_date": "2023-12-31",
+      "notice": "Operational real-time SMAP feed is not connected. FlashGuard-AI strictly avoids fabricating missing soil moisture."
+    }
+  },
+  "model_readiness": {
+    "can_run_full_model": false,
+    "required_features_count": 8,
+    "available_features_count": 4,
+    "available_features": [
+      "latitude",
+      "longitude",
+      "imerg_rainfall",
+      "rainfall_1day"
+    ],
+    "missing_features": [
+      "rainfall_3day",
+      "rainfall_7day",
+      "imd_rainfall",
+      "soil_moisture"
+    ],
+    "reason": "Official XGBoost model requires 8 features including IMD rainfall and SMAP soil moisture. Predictions currently shown in the dashboard remain historical research predictions."
+  },
+  "last_processing_run": "2026-10-16T16:04:49.248321+00:00",
+  "processing_status": "SUCCESS",
+  "latest_nrt_stats": {
+    "mean_imerg_rainfall_mm": 0.0033593749999999995,
+    "max_imerg_rainfall_mm": 0.175,
+    "min_imerg_rainfall_mm": 0.0,
+    "cells_count": 64
+  },
+  "last_indicator_run": "2026-10-16T16:04:49.535518+00:00",
+  "indicator_status": "SUCCESS",
+  "indicators_summary": {
+    "total_monitored_cells": 64,
+    "very_high_cells": 0,
+    "elevated_cells": 0,
+    "no_exceedance_cells": 64
+  },
+  "last_service_run": {
+    "timestamp": "2026-10-16T16:04:10.842699+00:00",
+    "duration_seconds": 47.33,
+    "days_back": 11,
+    "newly_downloaded_count": 0,
+    "skipped_duplicate_count": 11,
+    "failed_download_count": 0
+  },
+  "evidence_table": [
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261015-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-15",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "29.10 MB",
+      "file_size_bytes": 30516081,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261014-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-14",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "28.36 MB",
+      "file_size_bytes": 29741228,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261013-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-13",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "27.91 MB",
+      "file_size_bytes": 29262756,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261012-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-12",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "28.93 MB",
+      "file_size_bytes": 30336721,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261011-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-11",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "28.88 MB",
+      "file_size_bytes": 30281327,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261010-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-10",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "28.09 MB",
+      "file_size_bytes": 29458102,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261009-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-09",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "27.52 MB",
+      "file_size_bytes": 28851814,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261008-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-08",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "26.61 MB",
+      "file_size_bytes": 27904096,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261007-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-07",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "27.61 MB",
+      "file_size_bytes": 28954253,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261006-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-06",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "28.11 MB",
+      "file_size_bytes": 29473902,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261005-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-05",
+      "downloaded_this_run": "No",
+      "action_taken": "Reused (Duplicate Skipped)",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "28.60 MB",
+      "file_size_bytes": 29992045,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    },
+    {
+      "filename": "3B-DAY-E.MS.MRG.3IMERG.20261004-S000000-E235959.V07C.nc4",
+      "observation_date": "2026-10-04",
+      "downloaded_this_run": "No",
+      "action_taken": "Cached / Reused",
+      "validation_status": "Passed (Sikkim Box: 27.25-28.00\u00b0N, 88.00-88.75\u00b0E)",
+      "is_valid": true,
+      "file_size": "28.85 MB",
+      "file_size_bytes": 30246302,
+      "processing_result": "Extracted (64 Sikkim cells)"
+    }
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "name": "NASA IMERG Granule Search / Request",
+      "status": "COMPLETED",
+      "message": "Discovered 11 granule(s) between 2026-10-05 and 2026-10-16.",
+      "details": {
+        "discovered_count": 11,
+        "temporal_range": [
+          "2026-10-05",
+          "2026-10-16"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Granule Download / Cache Reuse",
+      "status": "COMPLETED",
+      "message": "All 11 granule(s) verified up-to-date on disk; duplicate downloads safely skipped.",
+      "details": {
+        "newly_downloaded": 0,
+        "skipped_duplicates": 11
+      }
+    },
+    {
+      "id": 3,
+      "name": "NetCDF & Sikkim Coverage Validation",
+      "status": "COMPLETED",
+      "message": "All 12 granules passed NetCDF schema, variable, and Sikkim bounding box checks.",
+      "details": {
+        "validated_count": 12
+      }
+    },
+    {
+      "id": 4,
+      "name": "Grid Feature Extraction (1d/3d/7d)",
+      "status": "COMPLETED",
+      "message": "Processed 64 cells for 2026-10-15 across 768 timeseries records.",
+      "details": {
+        "latest_observation_date": "2026-10-15",
+        "cell_count": 64,
+        "timeseries_records": 768,
+        "mean_rainfall_mm": 0.0033593749999999995,
+        "max_rainfall_mm": 0.175
+      }
+    },
+    {
+      "id": 5,
+      "name": "Rainfall Indicator Generation",
+      "status": "COMPLETED",
+      "message": "Generated indicators for 64 cells (Very High: 0, Elevated: 0, Normal: 64).",
+      "details": {
+        "very_high": 0,
+        "elevated": 0,
+        "no_exceedance": 64
+      }
+    },
+    {
+      "id": 6,
+      "name": "Dashboard Data Refresh",
+      "status": "RUNNING",
+      "message": "Persisting pipeline state and updating evidence records...",
+      "details": {}
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "FlashGuard AI"
+description = "A dark-mode foundation for an India-focused flash flood risk prediction and early-warning platform for hilly regions, designed for future citizen and official experiences."
+version = "1.0.0"
+id = "artifacts/flashguard-ai"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21783
+
+[services.development]
+run = "pnpm --filter @workspace/flashguard-ai run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/flashguard-ai", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/flashguard-ai/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21783"
+BASE_PATH = "/"
